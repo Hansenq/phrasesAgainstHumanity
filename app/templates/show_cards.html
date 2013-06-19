@@ -1,0 +1,30 @@
+{% extends "layout.html" %} 
+{% block body %} 
+    {% for card in white_cards %}
+        <li>
+            <h2>
+                (White) ID: {{ card.id }} ({{ card.orig_id }})
+            </h2>
+            {{ card.text }} 
+    {% else %}
+        <li>
+            <em>
+                Unbelievable. No white entries here so far.
+            </em>
+    {% endfor %}
+    {% for card in black_cards %}
+        <li>
+            <h2>
+                (Black) ID: {{ card.id }} ({{ card.orig_id }})
+            </h2>
+            <em>
+                Pick {{ card.num_to_pick }}:
+            </em>
+            {{ card.text }} 
+    {% else %}
+        <li>
+            <em>
+                Unbelievable. No black entries here so far.
+            </em>
+    {% endfor %}
+{% endblock %}
