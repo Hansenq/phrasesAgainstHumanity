@@ -59,7 +59,7 @@ class Phrase(db.Model):
     # has also black_card
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     votes = db.Column(db.Integer, default=0)
-    text = db.Column(db.String, default='', unique=True)
+    text = db.Column(db.String, default='')
     black_card_id = db.Column(db.Integer, db.ForeignKey('black_card.id'))
     filled_blanks = db.relationship(
         'FilledBlank',
